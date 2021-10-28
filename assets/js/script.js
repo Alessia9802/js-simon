@@ -6,34 +6,37 @@ Un alert() espone 5 numeri generati casualmente.
 - L'alert non si chiude in automatico. Dovete chiuderla voi a mano cliccando su ok.
  */
 
-function fiveNumbers(numUser) {
+function fiveNumbers() {
   /* console.log(n); */
   let str = "";
   for (var i = 0; i < 5; i++) {
     let n = parseInt(Math.floor(Math.random() * 100 + 1));
+    console.log(n);
     if (i > 0) {
       str += ",";
     }
     str += n;
   }
   alert(str);
-  for (let i = 0; i < 5; i++) {
-    const numUser = parseInt(prompt("Inserisci un numero"));
-    console.log(numUser);
-    // Utilizzare condizione if per verificare se i numeri inseriti dall'utente combaciano con quelli generati dal computer
-    //Come faccio a selezionare ogni singolo numero inserito dall'utente e verificarlo?
-    if (numUser === fiveNumbers) {
-      console.log("sono uguali");
-    } else {
-      console.log("sono diversi");
-    }
-  }
 }
 
 fiveNumbers();
 
 // Utilizzo SetTimeOut perchè dopo 30 secondi l'utente inserire attraverso un ciclo for per cinque volte un numero con il prompt.
 // Strumenti : SetTimeOut, Ciclo for e prompt
-// Devo inserirlo nella stessa funzione
 
-setTimeout(fiveNumbers, 3000); // 3 secondi
+setTimeout(myFunction, 3000); // 3 secondi
+
+function myFunction(n) {
+  for (let i = 0; i < 5; i++) {
+    const numUser = parseInt(prompt("Inserisci un numero"));
+    /* console.log(numUser); */
+    // Utilizzare condizione if per verificare se i numeri inseriti dall'utente combaciano con quelli generati dal computer
+    //Come faccio a selezionare ogni singolo numero inserito dall'utente e verificarlo?
+    if (numUser === n) {
+      console.log(numUser, "sono uguali");
+    } else {
+      console.log(numUser, "sono diversi");
+    }
+  }
+}
