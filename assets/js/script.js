@@ -7,25 +7,34 @@ Un alert() espone 5 numeri generati casualmente.
  */
 
 function fiveNumbers() {
-  let n = parseInt(1);
   /* console.log(n); */
-  if (n > 0 && n <= 100) {
-    str = "";
-    for (var i = 0; i <= 5; i++) {
-      num = Math.round(Math.random() * 100 + 1);
-      if (i > 0) {
-        str += ",";
-      }
-      str += num;
+  let str = "";
+  for (var i = 0; i < 5; i++) {
+    let n = parseInt(Math.floor(Math.random() * 100 + 1));
+    if (i > 0) {
+      str += ",";
     }
-    alert(Math.round(Math.random()) * 100 + 1);
-  } else {
-    console.log("non funziona");
+    str += n;
   }
+  alert(str);
 }
 
 fiveNumbers();
 
-for (let i = 1; i < 6; i++) {
-  console.log(i);
+// Utilizzo SetTimeOut perchè dopo 30 secondi l'utente inserire attraverso un ciclo for per cinque volte un numero con il prompt.
+// Strumenti : SetTimeOut, Ciclo for e prompt
+
+setTimeout(myFunction, 3000); // 3 secondi
+
+function myFunction() {
+  for (let i = 0; i < 5; i++) {
+    const numUser = parseInt(prompt("Inserisci un numero"));
+    console.log(numUser);
+    // Utilizzare condizione if per verificare se i numeri inseriti dall'utente combaciano con quelli generati dal computer
+  }
+  if (numUser == fiveNumbers) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
 }
